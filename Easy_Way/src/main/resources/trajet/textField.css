@@ -1,0 +1,35 @@
+/* Basic styling for the TextField */
+.text-field {
+    -fx-padding: 10px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 2px;
+    -fx-font-size: 16px;
+    -fx-background-color: white;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Focused state - blue border when clicked */
+.text-field:focused {
+    -fx-border-color: #4d90fe;  /* Light blue border */
+    -fx-effect: dropshadow(gaussian, #4d90fe, 8, 0, 0, 0); /* Correct box-shadow effect */
+}
+
+/* Optional - Styling for the placeholder text */
+.text-field .text {
+    -fx-fill: #333; /* Dark text color */
+}
+
+.text-field .prompt-text {
+    -fx-fill: #aaa; /* Light gray placeholder text */
+}
+
+/* Hover effect for TextField */
+.text-field:hover {
+    -fx-border-color: #4d90fe; /* Light blue on hover */
+}
+
+/* Removed box-shadow on focus out */
+.text-field {
+    -fx-effect: none; /* Remove box-shadow when the field is not focused */
+}

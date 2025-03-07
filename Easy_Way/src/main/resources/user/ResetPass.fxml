@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="597.0" prefWidth="822.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.ResetPassController">
+   <children>
+      <AnchorPane prefHeight="591.0" prefWidth="470.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <AnchorPane prefHeight="86.0" prefWidth="103.0">
+               <children>
+                  <ImageView fitHeight="112.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="16.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="vous avez oublié votre mot de passe ?">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#aea2a2" layoutX="50.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ne vous inquiétez pas, cela arrive à nous tous, entrez votre email ci-dessous pour récupérer votre mot de passe" wrappingWidth="324.746826171875">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Text>
+            <TextField fx:id="emailfield" layoutX="48.0" layoutY="235.0" prefHeight="26.0" prefWidth="313.0" promptText="Email" />
+            <Button fx:id="envoyercode" layoutX="107.0" layoutY="284.0" mnemonicParsing="false"
+                    onAction="#EnvoyerCode" prefHeight="45.0" prefWidth="210.0"
+                    style="-fx-background-color: #CF321A;" text="Envoyer code" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="19.0" />
+               </font>
+            </Button>
+
+            <Separator layoutX="16.0" layoutY="363.0" prefHeight="2.0" prefWidth="134.0" />
+            <Separator layoutX="270.0" layoutY="362.0" prefHeight="3.0" prefWidth="158.0" />
+            <Text layoutX="156.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ou Seconnecter avec " />
+            <ImageView fitHeight="36.0" fitWidth="52.0" layoutX="94.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/facebook.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="289.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/apple.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="194.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/google.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="465.0" prefHeight="598.0" prefWidth="357.0">
+         <children>
+            <ImageView fitHeight="377.0" fitWidth="337.0" layoutX="9.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/earth.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fx:id="redirectToSignIn" layoutX="51.0" layoutY="140.0"  strokeType="OUTSIDE" strokeWidth="0.0" text=" &lt;  Revenir pour se connecter">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

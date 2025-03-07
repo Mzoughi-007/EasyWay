@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #F4EFE2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.covoiturage.option">
+    <children>
+        <!-- Header -->
+        <BorderPane prefHeight="60.0" prefWidth="1000.0" style="-fx-background-color: #DDDEC6; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+            <center>
+                <HBox alignment="CENTER" prefHeight="60.0" prefWidth="836.0" spacing="20">
+                    <children>
+                        <Button onAction="#RedirectToChoix" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Accueil" />
+                        <Button style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Notre Solution" />
+                        <Button style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Communauté" />
+                    </children>
+                </HBox>
+            </center>
+            <left>
+                <ImageView fitHeight="60.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@LOGOEASY.png" />
+                    </image>
+                </ImageView>
+            </left>
+        </BorderPane>
+
+        <VBox fx:id="sideBar" alignment="TOP_CENTER" layoutY="60.0" prefHeight="640.0" prefWidth="250.0" spacing="20" style="-fx-background-color: #DDDEC6; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+            <children>
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #A11010;" text="EasyWay" textAlignment="CENTER">
+                    <font>
+                        <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Label>
+                <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="549.0" prefWidth="250.0" spacing="10.0">
+                    <children>
+                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#RedirectToProfile" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Mon profile">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </Button>
+                        <Button alignment="TOP_LEFT" layoutX="36.0" layoutY="10.0" mnemonicParsing="false" onAction="#RedirectToTrajet" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Suivre les trajet">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button alignment="TOP_LEFT" layoutX="36.0" layoutY="50.0" mnemonicParsing="false" onAction="#RedirectToLigne" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Decouvrir nos lignes">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button alignment="TOP_LEFT" layoutX="36.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleCovoiturage" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Espace de covoiturage">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button alignment="TOP_LEFT" layoutX="36.0" layoutY="90.0" mnemonicParsing="false" onAction="#RedirectToReclamation" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: transparent;" text="Soumettre reclamation">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                        </Button>
+                        <Button onAction="#logout" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #AA1010; -fx-text-fill: white;" text="Logout">
+                            <font>
+                                <Font name="System Bold" size="16.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="250.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets top="30.0" />
+            </padding>
+        </VBox>
+
+        <!-- Main Content -->
+        <AnchorPane layoutX="272.0" layoutY="109.0" prefHeight="450.0" prefWidth="650.0">
+            <children>
+                <VBox alignment="CENTER" spacing="20" style="-fx-padding: 20; -fx-background-color: #DDDEC6; -fx-border-color: #A11010; -fx-border-width: 10; -fx-border-radius: 10;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                    <children>
+                        <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Bienvenue sur EasyWay !" />
+                        <Label prefHeight="70.0" prefWidth="606.0" style="-fx-font-size: 16px; -fx-text-fill: #555; -fx-wrap-text: true; -fx-alignment: center;" text="Facilitez vos déplacements à Tunis en choisissant l'option qui vous convient le mieux." />
+                        <ImageView fitHeight="120.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@carpool.png" />
+                            </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333;" text="Que souhaitez-vous faire ?" />
+                        <Label style="-fx-font-size: 16px; -fx-text-fill: #666;" text="Sélectionnez une option ci-dessous :" />
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Button onAction="#option" style="-fx-font-size: 16px; -fx-padding: 12 25; -fx-background-color: #008955; -fx-background-radius: 10; -fx-text-fill: WHITE; -fx-font-weight: bold;" text="Publier un covoiturage" />
+                                <Button onAction="#offer" style="-fx-font-size: 16px; -fx-padding: 12 25; -fx-background-color: #A11010; -fx-background-radius: 10; -fx-text-fill: #f8f3f3; -fx-font-weight: bold;" text="Réserver un covoiturage" />
+                            </children>
+                        </HBox>
+                        <Label style="-fx-font-size: 14px; -fx-text-fill: #777; -fx-wrap-text: true; -fx-alignment: center;" text="Rejoignez notre communauté et optimisez vos trajets au quotidien !" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="700.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.event.editPageController">
+    <VBox fx:id="sideBar" prefHeight="700.0" prefWidth="202.0" style="-fx-background-color: white;">
+        <AnchorPane prefHeight="721.0" prefWidth="202.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+            <children>
+                <ImageView fx:id="imageProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+                    <image>
+                        <Image url="@assets/avatar.jpg" />
+                    </image>
+                </ImageView>
+
+                <Label layoutX="61.0" layoutY="223.0" text="Welcome," textFill="WHITE">
+                    <font>
+                        <Font name="Tahoma" size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="username" alignment="CENTER" layoutX="1.0" layoutY="244.0" prefHeight="23.0" prefWidth="194.0" text="MarcoMan" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Line endX="69.0" layoutX="114.0" layoutY="208.0" startX="-100.0" stroke="WHITE" />
+                <VBox alignment="CENTER" layoutX="-3.0" layoutY="297.0" prefHeight="305.0" prefWidth="194.0" spacing="5.0">
+                    <children>
+                        <Button fx:id="usersBtn" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#RedirectToUsers" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Utilisateurs" />
+                        <Button fx:id="vehiculesBtn" mnemonicParsing="false" onAction="#RedirectToVehicules" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Vehicules">
+
+                        </Button>
+                        <Button fx:id="EventsBtn" mnemonicParsing="false" onAction="#goToEventList" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Evenements">
+
+                        </Button>
+                        <Button fx:id="ReclamationBtn" mnemonicParsing="false" onAction="#RedirectToReclamation" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Reclamations">
+
+                        </Button>
+                        <Button fx:id="trajetBtn" mnemonicParsing="false" onAction="#RedirectToTrajet" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Trajets" />
+                        <Button fx:id="ligneBtn" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#RedirectToLigne" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Lignes" />
+                    </children>
+                </VBox>
+                <Button fx:id="logout" layoutX="41.0" layoutY="635.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="113.0" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+
+                    <styleClass>
+                        <String fx:value="logout" />
+                        <String fx:value="shadow" />
+                    </styleClass>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </VBox>
+    <VBox alignment="CENTER" layoutX="190.0" layoutY="1.0" prefHeight="694.0" prefWidth="890.0" spacing="15" style="-fx-padding: 20px; -fx-background-color: #FFFFFF;">
+
+        <!-- Title -->
+        <Label alignment="TOP_LEFT" style="-fx-font-size: 24px; -fx-text-fill: #D32F2F; -fx-font-weight: bold;" text="Modifier un Événement">
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin></Label>
+
+        <!-- Type Choice Box -->
+        <HBox alignment="CENTER" spacing="80.0">
+            <Label prefHeight="18.0" prefWidth="80.0" text="Type:" />
+            <ChoiceBox fx:id="typeChoiceBox" prefWidth="280.0" />
+        </HBox>
+
+        <!-- Ligne Affectée Field -->
+        <HBox alignment="CENTER" spacing="80.0">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="80.0" text="Ligne Affectée:" />
+            <TextField fx:id="ligneField" prefWidth="280.0" promptText="Numéro de ligne" />
+        </HBox>
+
+        <!-- Date Debut -->
+        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="646.0" spacing="80.0">
+            <Label prefWidth="80.0" text="Date Début:" />
+            <DatePicker fx:id="dateDebutPicker" prefWidth="280.0" />
+        </HBox>
+
+        <!-- Date Fin -->
+        <HBox alignment="CENTER" spacing="80.0">
+            <Label prefWidth="80.0" text="Date Fin:" />
+            <DatePicker fx:id="dateFinPicker" prefHeight="26.0" prefWidth="280.0" />
+        </HBox>
+
+        <!-- Status Choice Box -->
+        <HBox alignment="CENTER" spacing="80.0">
+            <Label prefWidth="80.0" text="Statut:" />
+            <ChoiceBox fx:id="statusChoiceBox" prefHeight="26.0" prefWidth="280.0" />
+        </HBox>
+
+        <!-- Description Field -->
+        <HBox alignment="TOP_CENTER" spacing="20.0">
+            <TextArea fx:id="descText" prefHeight="200.0" prefWidth="851.0" promptText="Donnez la description de l'evenement" />
+        </HBox>
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button onAction="#goBack" style="-fx-background-color: Lightblue;" text="Retour" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
+            <Button onAction="#clearAll" style="-fx-background-color: #EF9A9A; -fx-text-fill: white; -fx-font-weight: bold;" text="tout effacer" />
+            <Button onAction="#updateEvent" style="-fx-background-color: #008000; -fx-text-fill: white; -fx-font-weight: bold;" text="Modifier" />
+        </HBox>
+
+    </VBox>
+</Pane>

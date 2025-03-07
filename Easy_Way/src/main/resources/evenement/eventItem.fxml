@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="eventItem" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="55.0" prefWidth="1150.0" spacing="15.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.event.eventItemController">
+<children>
+    <Label fx:id="idType" alignment="CENTER" prefWidth="105.0" text="Type">
+        <font>
+            <Font name="Corbel" size="18.0" />
+        </font>
+        <HBox.margin>
+            <Insets left="10.0" />
+        </HBox.margin>
+    </Label>
+    <Label fx:id="idDesc" alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="23.0" prefWidth="200.0" text="Description">
+        <font>
+            <Font name="Corbel" size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="idDateDebut" alignment="CENTER" layoutX="65.0" layoutY="28.0" prefWidth="110.0" text="Date debut">
+        <font>
+            <Font name="Corbel" size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="idDateFin" alignment="CENTER" layoutX="156.0" layoutY="28.0" prefWidth="110.0" text="Date Fin">
+        <font>
+            <Font name="Corbel" size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="idLigne" alignment="CENTER" layoutX="276.0" layoutY="28.0" prefWidth="215.0" text="Ligne">
+        <font>
+            <Font name="Corbel" size="20.0" />
+        </font>
+    </Label>
+    <Label fx:id="idStatus" alignment="CENTER" layoutX="367.0" layoutY="28.0" prefWidth="105.0" text="Status">
+        <font>
+            <Font name="Corbel" size="20.0" />
+        </font>
+    </Label>
+    <HBox alignment="CENTER" prefHeight="55.0" prefWidth="260.0" spacing="10.0">
+        <HBox.margin>
+            <Insets left="35.0" />
+        </HBox.margin>
+        <children>
+            <Button fx:id="viewButton" mnemonicParsing="false" style="-fx-background-color: #349eeb;" text="View" textFill="WHITE">
+                <font>
+                    <Font name="Corbel Bold" size="16.0" />
+                </font>
+            </Button>
+            <Button fx:id="editButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #d5e310;" text="Edit" textFill="WHITE">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Button>
+            <Button fx:id="deleteButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #8a0001;" text="Delete" textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </children>
+    </HBox>
+</children>
+</HBox>

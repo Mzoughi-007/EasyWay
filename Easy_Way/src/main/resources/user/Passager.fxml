@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="634.0" prefWidth="910.0" style="-fx-background-color: #B7D973;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.PassagerController">
+   <children>
+      <AnchorPane layoutX="80.0" layoutY="67.0" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Circle fill="#d1d1d1" layoutX="24.0" layoutY="26.0" radius="14.0" stroke="LIGHTGRAY" strokeType="INSIDE" />
+            <AnchorPane layoutX="10.0" layoutY="40.0">
+               <children>
+                  <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Créer un compte">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+
+                  <!-- Champ Numéro de Permis -->
+                  <Label layoutX="14.0" layoutY="75.0" text="Nombre de Trajets Effectues">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numeroPermisField" layoutX="14.0" layoutY="95.0" prefHeight="26.0" prefWidth="180.0" promptText="entrer le nbTrajetsEffectues" />
+
+                  <Button fx:id="createAccountButton" layoutX="248.0" layoutY="221.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="172.0" style="-fx-background-color: #EFA9A9;" text="Créer un compte" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+
+                  <!-- Image -->
+                  <AnchorPane layoutX="420.0" layoutY="50.0" prefHeight="300.0" prefWidth="280.0">
+                     <children>
+                        <ImageView fx:id="logo" fitHeight="200.0" fitWidth="250.0" layoutX="15.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

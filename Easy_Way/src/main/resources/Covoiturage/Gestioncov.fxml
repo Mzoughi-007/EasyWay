@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #F4EFE2;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.covoiturage.AddCovoiturageController">
+
+
+     
+
+
+         <children>
+            <!-- Header -->
+            <BorderPane prefHeight="60.0" prefWidth="1000.0" style="-fx-background-color: #DDDEC6; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+               <center>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="836.0" spacing="20">
+                     <Button style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Accueil" />
+                     <Button style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Notre Solution" />
+                     <Button style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #DDDEC6; -fx-text-fill: #A11010;" text="Communauté" />
+                  </HBox>
+               </center>
+               <right>
+                  <Button style="-fx-background-color: #AA1010; -fx-text-fill: white;" text="Logout">
+               <BorderPane.margin>
+                  <Insets right="10.0" top="15.0" />
+               </BorderPane.margin></Button>
+               </right>
+               <left>
+                  <ImageView fitHeight="60.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@LOGOEASY.png" />
+                     </image>
+                  </ImageView>
+               </left>
+            </BorderPane>
+
+            <!-- Sidebar -->
+            <VBox layoutY="60.0" prefHeight="640.0" prefWidth="250.0" spacing="20" style="-fx-background-color: #DDDEC6; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);">
+               <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #A11010;" text="EasyWay" textAlignment="CENTER">
+            <font>
+               <Font name="Franklin Gothic Demi Cond" size="18.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="10.0" left="60.0" right="10.0" top="10.0" />
+            </VBox.margin></Label>
+         <VBox layoutX="20.0" layoutY="20.0" prefHeight="91.0" prefWidth="202.0">
+            <children>
+                     <HBox layoutX="20.0" layoutY="20.0" prefHeight="25.0" prefWidth="186.0" spacing="10" style="-fx-background-color: #F4EFE2;">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@profil.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 16px; -fx-text-fill: #333;" text="Profile">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox.margin>
+                     <Insets left="40.0" right="40.0" />
+                  </VBox.margin>
+                     </HBox>
+                     <HBox spacing="10">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@car.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 16px; -fx-text-fill: #333;" text="Posts">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox.margin>
+                     <Insets left="40.0" top="20.0" />
+                  </VBox.margin>
+                     </HBox>
+                     <HBox spacing="10">
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@chatt.png" />
+                           </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 16px; -fx-text-fill: #333;" text="Offres" />
+                  <VBox.margin>
+                     <Insets left="40.0" top="20.0" />
+                  </VBox.margin>
+                     </HBox>
+            </children>
+         </VBox>
+
+
+               <VBox layoutY="500.0" spacing="10">
+                  <Button mnemonicParsing="false" text="⬅ Retour" onAction="#gotooffres"
+                          style="-fx-font-size: 16px;
+               -fx-padding: 10 20;
+               -fx-background-color: #f8f8f8;
+               -fx-text-fill: #333333;
+               -fx-font-weight: bold;
+               -fx-background-radius: 12;
+               -fx-border-radius: 12;
+               -fx-border-color: #A11010;
+               -fx-border-width: 2;
+               -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 2, 2);" >
+                     <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <ToggleButton style="-fx-font-size: 14px; -fx-text-fill: #333; -fx-background-color: #DDDEC6;" text="Light Mode">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0">
+                           <image>
+                              <Image url="@idea.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+                  <Button style="-fx-background-color: #AA1010; -fx-text-fill: white;" text="Logout">
+               <VBox.margin>
+                  <Insets left="90.0" />
+               </VBox.margin></Button>
+            <VBox.margin>
+               <Insets top="360.0" />
+            </VBox.margin>
+               </VBox>
+            </VBox>
+
+
+            <Label layoutX="496.0" layoutY="140.0" text="Besoin d'un passager ? Publiez ici !">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+
+            <Label layoutX="482.0" layoutY="220.0" text="Ville de départ" textFill="#a30606">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="departureCity" layoutX="556.0" layoutY="251.0" prefWidth="150.0" />
+
+            <Label layoutX="479.0" layoutY="295.0" text="Ville d'arrivée" textFill="#a30606">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="arrivalCity" layoutX="556.0" layoutY="337.0" prefWidth="150.0" />
+
+            <Label layoutX="481.0" layoutY="394.0" prefHeight="22.0" prefWidth="38.0" text="Date" textFill="#a30606">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="travelDate" layoutX="556.0" layoutY="392.0" />
+            <Label layoutX="472.0" layoutY="448.0" text="Prix (DT)" textFill="#a30606">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prix" layoutX="556.0" layoutY="446.0" prefWidth="150.0" />
+
+            <Label layoutX="411.0" layoutY="492.0" text="Nombre de places" textFill="#a30606">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nombreDePlaces" layoutX="556.0" layoutY="490.0" prefWidth="150.0" />
+
+            <Label layoutX="496.0" layoutY="536.0" text="Quand et comment voyagez-vous ?" textFill="#8b0e0e">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="travelDetails" layoutX="448.0" layoutY="566.0" prefHeight="80.0" prefWidth="347.0" text="🕒 Heure : &#10;📍 Point de départ :  &#10;">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </TextArea>
+
+            <Button fx:id="ajouter" layoutX="816.0" layoutY="582.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="47.0" prefWidth="121.0" style="-fx-background-color: #DDDEC6;" text="AJOUTER" textFill="#331414">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="20.0" />
+               </font>
+            </Button>
+
+
+         </children>
+
+</AnchorPane>

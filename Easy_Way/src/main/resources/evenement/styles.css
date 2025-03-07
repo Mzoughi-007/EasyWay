@@ -1,0 +1,478 @@
+/* Root styles */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+/* Style pour le bouton "Ajouter Matériel" */
+.add-button {
+    -fx-background-color:lightblue; /* Vert, ou une autre couleur selon votre préférence */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: innershadow(gaussian, #000000, 5, 0.5, 0, 2);
+}
+
+.add-button:hover {
+    -fx-background-color: lightblue; /* Couleur un peu plus foncée au survol */
+}
+
+.add-button:pressed {
+    -fx-background-color: lightblue; /* Couleur encore plus foncée lors de l'appui */
+}
+
+/* Sidebar styles */
+.sidebar {
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+}
+
+.logo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: lightblue;
+    -fx-padding: 20 0 20 20;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #666666;
+    -fx-padding: 12 20;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: infinity;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+/* TableView and Column Styles */
+.table-view {
+    -fx-background-color: white;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+}
+
+.table-view .table-column {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: CENTER;
+    -fx-padding: 10;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 5;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #333333;
+    -fx-font-size: 12 px;
+    -fx-alignment: CENTER;
+    -fx-padding: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 5;
+}
+
+/* Style for table header */
+.table-view .column-header {
+    -fx-background-color: lightblue;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+    -fx-border-radius: 5;
+}
+
+/* Row hover effect */
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-cursor: hand;
+}
+
+/* Custom scrollbar for TableView */
+.table-view .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5;
+}
+
+.table-view .scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+/* TableView spacing */
+.table-view {
+    -fx-spacing: 5;
+    -fx-alignment: CENTER;
+}
+
+
+.nav-button:hover {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: lightblue;
+}
+
+.nav-button.active {
+    -fx-background-color: lightblue;
+    -fx-text-fill: white;
+}
+
+/* Header styles */
+.header {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+    -fx-padding: 10 20;
+}
+
+.search-field {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 8;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-font-size: 14px;
+}
+
+.language-selector {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-font-size: 14px;
+}
+
+.profile-section {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.admin-label {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+/* Content area styles */
+.content-area {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Pack card styles */
+.pack-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-cursor: hand;
+}
+
+.pack-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 6);
+}
+
+.pack-card .title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.pack-card .price {
+    -fx-text-fill: lightblue;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.pack-card .rating-box {
+    -fx-spacing: 5;
+}
+
+.pack-card .star {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+}
+
+.pack-card .star.filled {
+    -fx-text-fill: lightblue;
+}
+
+.pack-card .reviews {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+/* Edit button styles */
+.edit-button {
+    -fx-background-color: #f8fafc;
+    -fx-text-fill: #666666;
+    -fx-padding: 8 16;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.edit-button:hover {
+    -fx-background-color: lightblue;
+    -fx-text-fill: white;
+}
+
+/* Dialog styles */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 6);
+}
+
+.dialog-button {
+    -fx-background-color: lightblue;
+    -fx-text-fill: white;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+
+.dialog-button:hover {
+    -fx-background-color: #c0a060;
+}
+
+/* Styles for the edit dialog */
+.form-container {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-background-radius: 10;
+}
+
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 10 0;
+}
+
+.form-button {
+    -fx-background-color: lightblue;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.form-button:hover {
+    -fx-background-color: #c0a060;
+}
+
+/* Input field styles */
+.text-field, .text-area {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #e2e8f0;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: lightblue;
+}
+
+/* ScrollPane styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: lightblue;
+    -fx-background-radius: 5;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-button,
+.scroll-pane .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar:vertical .increment-arrow,
+.scroll-pane .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: lightblue;
+}
+
+/* Pack Details View */
+.pack-details {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 4);
+    -fx-padding: 20;
+    -fx-spacing: 15;
+}
+
+.detail-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.pack-details .label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #666666;
+}
+
+.pack-details .rating-box {
+    -fx-spacing: 5;
+}
+
+.pack-details .star {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+}
+
+.pack-details .star.filled {
+    -fx-text-fill: lightblue;
+}
+
+.pack-details .reviews {
+    -fx-text-fill: #666666;
+    -fx-font-size: 14px;
+}
+
+/* Delete Button */
+.delete-button {
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.delete-button:hover {
+    -fx-background-color: #e60000;
+}
+
+/* Logout Button */
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #D32F2F;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: infinity;
+    -fx-font-size: 14px;
+    -fx-transition: 0.3s;
+}
+
+.logout-button:hover {
+    -fx-background-color: #FFEDED;
+    -fx-text-fill: #B71C1C;
+    -fx-font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        -fx-pref-width: 180px;
+        -fx-min-width: 150px;
+        -fx-max-width: 200px;
+    }
+
+    .header {
+        -fx-padding: 10;
+    }
+
+    .search-field {
+        -fx-pref-width: 120px;
+    }
+
+    .language-selector {
+        -fx-pref-width: 100px;
+    }
+
+    .profile-section {
+        -fx-spacing: 5;
+    }
+
+    .section-title {
+        -fx-font-size: 20px;
+    }
+
+    .pack-card {
+        -fx-padding: 10;
+    }
+
+    .pack-card .title {
+        -fx-font-size: 16px;
+    }
+
+    .pack-card .price {
+        -fx-font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        -fx-pref-width: 150px;
+        -fx-min-width: 120px;
+        -fx-max-width: 180px;
+    }
+
+    .header {
+        -fx-padding: 5;
+    }
+
+    .search-field {
+        -fx-pref-width: 80px;
+    }
+
+    .language-selector {
+        -fx-pref-width: 80px;
+    }
+
+    .profile-section {
+        -fx-spacing: 2;
+    }
+
+    .section-title {
+        -fx-font-size: 18px;
+    }
+
+    .pack-card {
+        -fx-padding: 5;
+    }
+
+    .pack-card .title {
+        -fx-font-size: 14px;
+    }
+
+    .pack-card .price {
+        -fx-font-size: 12px;
+    }
+}

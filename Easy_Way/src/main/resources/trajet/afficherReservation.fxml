@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="page_map" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #ccd899;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.trajet.AfficherReservation">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="667.0" prefWidth="969.0" style="-fx-background-radius: 13; -fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="64.0" fitWidth="68.0" layoutX="886.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="61.0" layoutY="31.0" prefHeight="28.0" prefWidth="272.0" text="Accédez à vos réservations" textFill="#d90202">
+               <font>
+                  <Font name="Calibri Bold" size="24.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="160.0" layoutY="612.0" onAction="#back" style="-fx-underline: true;" text="Réserver maintenant" />
+            <Hyperlink layoutX="378.0" layoutY="614.0" style="-fx-underline: true;" text="community" />
+            <Hyperlink layoutX="718.0" layoutY="615.0" style="-fx-underline: true;" text="help" />
+            <Hyperlink layoutX="561.0" layoutY="614.0" style="-fx-underline: true;" text="Réclamation" />
+            <Button layoutX="715.0" layoutY="544.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="39.0" prefWidth="169.0" stylesheets="@button.css" text="Supprimer" />
+            <Label fx:id="erreurLabel" layoutX="273.0" layoutY="294.0" prefHeight="18.0" prefWidth="214.0" />
+            <ListView id="007" fx:id="View" layoutX="134.0" layoutY="92.0" prefHeight="413.0" prefWidth="711.0" styleClass="reservation-item" stylesheets="@style.css">
+
+            </ListView>
+
+
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

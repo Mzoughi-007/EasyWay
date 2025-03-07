@@ -1,0 +1,59 @@
+/* Style for the individual Paiement items (reservation containers) */
+.paiement-item {
+    -fx-background-color: white;
+    -fx-padding: 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, gray, 5, 0.5, 0, 0);
+    -fx-font-size: 16px;
+    -fx-font-family: "Segoe UI";
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-spacing: 10px;
+}
+
+/* Hover effect for Paiement items */
+.paiement-item:hover {
+    -fx-background-color: #f7f7f7;
+    -fx-border-color: #007bff;
+}
+
+/* Selected effect for Paiement items */
+.paiement-item:selected {
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #007bff;
+    -fx-border-radius: 16px;  /* Larger border-radius on selection */
+}
+
+/* Style for the ListView containing the Paiement items */
+#view {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+}
+
+/* Custom styling for labels inside the Paiement item */
+.paiement-label {
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Styling for individual labels within the payment item (e.g., Montant, ID) */
+.paiement-item .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+    -fx-font-family: "Segoe UI";
+    -fx-padding: 5px 0;
+}
+
+/* Style the container for the entire ListView */
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 8px;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="700.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.event.EventTable">
+    <VBox fx:id="sideBar" prefHeight="700.0" prefWidth="202.0" style="-fx-background-color: white;">
+          <AnchorPane prefHeight="721.0" prefWidth="202.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+              <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+               <image>
+                  <Image url="@assets/avatar.jpg" />
+               </image>
+            </ImageView>
+
+                  <Label layoutX="61.0" layoutY="223.0" text="Welcome," textFill="WHITE">
+                      <font>
+                          <Font name="Tahoma" size="17.0" />
+                      </font>
+                  </Label>
+                  <Label fx:id="username" alignment="CENTER" layoutX="1.0" layoutY="244.0" prefHeight="23.0" prefWidth="194.0" text="MarcoMan" textFill="WHITE">
+                      <font>
+                          <Font name="Arial Bold" size="20.0" />
+                      </font>
+                  </Label>
+                  <Line endX="69.0" layoutX="114.0" layoutY="208.0" startX="-100.0" stroke="WHITE" />
+            <VBox alignment="CENTER" layoutX="-3.0" layoutY="297.0" prefHeight="305.0" prefWidth="194.0" spacing="5.0">
+               <children>
+                  <Button fx:id="usersBtn" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#RedirectToUsers" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Utilisateurs" />
+                        <Button fx:id="vehiculesBtn" mnemonicParsing="false" onAction="#RedirectToVehicules" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Vehicules">
+
+                        </Button>
+                        <Button fx:id="EventsBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Evenements">
+
+                        </Button>
+                        <Button fx:id="ReclamationBtn" mnemonicParsing="false" onAction="#RedirectToReclamation" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Reclamations">
+
+                        </Button>
+                  <Button fx:id="trajetBtn" mnemonicParsing="false" onAction="#RedirectToTrajet" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Trajets" />
+                  <Button fx:id="ligneBtn" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#RedirectToLigne" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Lignes" />
+               </children>
+            </VBox>
+                  <Button fx:id="logout" layoutX="41.0" layoutY="635.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="113.0" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+
+                      <styleClass>
+                          <String fx:value="logout" />
+                          <String fx:value="shadow" />
+                      </styleClass>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+                  </Button>
+              </children>
+          </AnchorPane>
+    </VBox>
+   <VBox layoutX="206.0" layoutY="8.0">
+      <children>
+          <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="840.0" style="-fx-background-color: white;">
+              <Label alignment="CENTER" text="Liste des évènements">
+                  <font>
+                      <Font name="Corbel Bold" size="42.0" />
+                  </font>
+                  <HBox.margin>
+                      <Insets left="35.0" />
+                  </HBox.margin>
+              </Label>
+              <Pane prefHeight="86.0" prefWidth="306.0" HBox.hgrow="ALWAYS" />
+              <Button mnemonicParsing="false" onAction="#goToAddForm" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: green;" text="Ajouter" textFill="WHITE">
+                  <font>
+                      <Font name="Corbel Bold" size="18.0" />
+                  </font>
+              </Button>
+          </HBox>
+         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="86.0" prefWidth="840.0" spacing="20.0" style="-fx-background-color: white;">
+            <children>
+               <Label alignment="CENTER" text="Rechercher">
+                  <font>
+                     <Font name="Corbel Bold" size="16.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="35.0" />
+                  </HBox.margin>
+               </Label>
+               <TextField fx:id="searchField" prefHeight="26.0" prefWidth="469.0" promptText="Rechercher un événement..." />
+               <Button mnemonicParsing="false" onAction="#ClearAll" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: ef9a9a;" text="Effacer tout" textFill="WHITE">
+                  <font>
+                     <Font name="Corbel Bold" size="14.0" />
+                  </font>
+               </Button>
+               <Button layoutX="633.0" layoutY="36.0" mnemonicParsing="false" onAction="#goToDashboard" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="Dashboard" textFill="WHITE">
+                  <font>
+                     <Font name="Corbel Bold" size="14.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+    <ScrollPane layoutX="204.0" layoutY="175.0" maxWidth="866.0" prefHeight="524.0" prefWidth="865.0" style="-fx-background-color: transparent;">
+        <GridPane fx:id="eventGrid" hgap="20" prefHeight="520.0" prefWidth="850.0" style="-fx-background-color: transparent;" stylesheets="@styles.css" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+            </columnConstraints>
+        </GridPane>
+    </ScrollPane>
+
+</Pane>

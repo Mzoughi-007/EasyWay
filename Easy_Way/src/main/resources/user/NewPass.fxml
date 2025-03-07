@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="488.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.NewPassController">
+   <children>
+      <AnchorPane prefHeight="488.0" prefWidth="435.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <AnchorPane prefHeight="90.0" prefWidth="99.0">
+               <children>
+                  <ImageView fitHeight="89.0" fitWidth="107.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="57.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Définir un mot de passe" wrappingWidth="321.5456848144531">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Text>
+            <Text fill="#8e8888" layoutX="57.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="votre mot de passe récent a été réinitialisé, veuillez saisir un nouveau mot de passe pour votre compte" wrappingWidth="283.3902282714844" />
+            <PasswordField fx:id="newpasswd" layoutX="57.0" layoutY="184.0" prefHeight="26.0" prefWidth="283.0" promptText="Créer un mot de passe" />
+            <PasswordField fx:id="confirmpass" layoutX="57.0" layoutY="231.0" prefHeight="26.0" prefWidth="283.0" promptText="Confirmer votre mot de passe" />
+            <Button fx:id="resetmdp" layoutX="59.0" layoutY="280.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #e40000;" text="Définir le mot de passe " textFill="WHITE" onMouseClicked="#redirectToSignIn">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="435.0" prefHeight="488.0" prefWidth="368.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="310.0" fitWidth="299.0" layoutX="35.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/earth.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

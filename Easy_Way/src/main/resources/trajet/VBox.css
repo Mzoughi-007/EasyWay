@@ -1,0 +1,13 @@
+.vbox-style {
+    -fx-spacing: 20;               /* Regular spacing between children */
+    -fx-padding: 30px 0px 0px 0px; /* Larger padding at the top */
+    -fx-alignment: center;         /* Center the children inside the VBox */
+    -fx-background-radius: 15px;   /* Rounded corners (optional) */
+    -fx-border-width: 0;           /* No border */
+    -fx-transition: all 0.3s ease; /* Smooth transition */
+    -fx-pref-width: 80%;           /* The VBox itself takes up 80% of the available width */
+}
+
+.vbox-style > * {
+    -fx-pref-width: 80%;           /* Each child inside the VBox will take up 80% of the available width */
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="634.0" prefWidth="910.0" style="-fx-background-color: #B7D973;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.ProfileController">
+    <children>
+        <AnchorPane layoutX="80.0" layoutY="67.0" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+                <Circle fill="#d1d1d1" layoutX="24.0" layoutY="26.0" radius="14.0" stroke="LIGHTGRAY" strokeType="INSIDE" />
+                <AnchorPane layoutX="10.0" layoutY="40.0" prefHeight="442.0" prefWidth="700.0">
+                    <children>
+                        <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mon Profil">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="24.0" />
+                            </font>
+                        </Text>
+
+                        <!-- Photo de Profil -->
+                        <AnchorPane layoutX="500.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fx:id="profileImageView" fitHeight="150.0" fitWidth="150.0" layoutX="25.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/Admin.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="changePhotoButton" layoutX="25.0" layoutY="165.0" mnemonicParsing="false" onAction="#changeProfilePhoto" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #EFA9A9;" text="Changer la photo" textFill="WHITE">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+
+                        <!-- Champs de modification -->
+                        <Label layoutX="14.0" layoutY="75.0" text="Nom">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="nomField" layoutX="14.0" layoutY="95.0" promptText="Votre nom" />
+
+                        <Label layoutX="214.0" layoutY="75.0" text="Prénom">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="prenomField" layoutX="214.0" layoutY="95.0" prefWidth="172.0" promptText="Votre prénom" />
+
+                        <Label layoutX="14.0" layoutY="130.0" text="Adresse mail">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="emailField" layoutX="15.0" layoutY="150.0" prefWidth="366.0" promptText="exemple@exemple.exemple" />
+
+                        <Label layoutX="14.0" layoutY="185.0" text="Mot de passe actuel">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="currentPasswordField" layoutX="15.0" layoutY="205.0" promptText="Entrez votre mot de passe actuel" />
+
+                        <Label layoutX="214.0" layoutY="185.0" text="Nouveau mot de passe">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="newPasswordField" layoutX="214.0" layoutY="205.0" prefWidth="172.0" promptText="Entrez un nouveau mot de passe" />
+
+                        <Label layoutX="14.0" layoutY="260.0" text="Téléphone">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="telephoneField" layoutX="14.0" layoutY="280.0" promptText="XX XXX XXX" />
+
+                        <!-- Bouton pour enregistrer les modifications -->
+                        <Button fx:id="saveButton" layoutX="350.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveProfileChanges" prefHeight="44.0" prefWidth="172.0" style="-fx-background-color: #EFA9A9;" text="Enregistrer" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </Button>
+                  <Button fx:id="saveButton1" layoutX="487.0" layoutY="284.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="172.0" style="-fx-background-color: #EFA9A9;" text="Reclamation" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+
+        <Label layoutX="690.0" layoutY="578.0" text="Aide" />
+        <Label layoutX="724.0" layoutY="578.0" text="Confidentialité" />
+        <Label layoutX="814.0" layoutY="578.0" text="Termes" />
+    </children>
+</AnchorPane>

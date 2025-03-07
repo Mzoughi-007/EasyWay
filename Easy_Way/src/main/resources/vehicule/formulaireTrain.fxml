@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:controller="tn.esprit.controller.vehicule.AjouterTrainController" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="CENTER" styleClass="form-container" stylesheets="@easyway.css">
+    <Label text="Affectez un Train" styleClass="form-title">
+        <font>
+            <Font size="24"/>
+        </font>
+    </Label>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Immatricule:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="immatriculeField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Capacité:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="capaciteField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="État:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="etatComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Nom Conducteur:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomConducteurField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Prénom Conducteur:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="prenomConducteurField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Depart:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="DepartField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label text="Arret:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="ArretField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Longeur réseau (km):" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="longuerReseauField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre de lignes:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextField fx:id="nombreLignesField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Label text="Nombre Wagons:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <TextField fx:id="NombreWagonsField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+        <Label text="vitesse Maximale(km/h):" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+        <TextField fx:id="vitesseField" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+        <Label text="Propriétaire:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+        <TextField fx:id="proprietaireField" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Ajouter" onAction="#handleAjouter" styleClass="add-button"/>
+        <Button text="Annuler" onAction="#handleAnnuler" styleClass="cancel-button"/>
+    </HBox>
+</VBox>

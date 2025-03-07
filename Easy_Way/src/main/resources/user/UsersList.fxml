@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.UsersListController">
+
+   <children>
+      <AnchorPane prefHeight="721.0" prefWidth="202.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+         <children>
+            <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="551.2" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="30.0" />
+
+            <Label layoutX="61.0" layoutY="223.0" text="Welcome," textFill="WHITE">
+               <font>
+                  <Font name="Tahoma" size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="username" alignment="CENTER" layoutX="1.0" layoutY="244.0" prefHeight="23.0" prefWidth="194.0" text="MarcoMan" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+            <Line endX="69.0" layoutX="114.0" layoutY="208.0" startX="-100.0" stroke="WHITE" />
+            <VBox alignment="CENTER" layoutX="-3.0" layoutY="297.0" prefHeight="305.0" prefWidth="194.0" spacing="5.0">
+               <children>
+                  <Button fx:id="usersBtn" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Utilisateurs" />
+                  <Button fx:id="vehiculesBtn" mnemonicParsing="false" onAction="#RedirectToVehicule" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Vehicules">
+
+                  </Button>
+                  <Button fx:id="EventsBtn" mnemonicParsing="false" onAction="#RedirectToEvents" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Evenements">
+
+                  </Button>
+                  <Button fx:id="ReclamationBtn" mnemonicParsing="false" onAction="#RedirectToReclamation" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Reclamations">
+
+                  </Button>
+                  <Button fx:id="trajetBtn" mnemonicParsing="false" onAction="#RedirectToTrajet" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Trajets" />
+                  <Button fx:id="ligneBtn" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#RedirectToLigne" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Lignes" />
+               </children>
+            </VBox>
+            <Button fx:id="logout" layoutX="41.0" layoutY="635.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="113.0" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+
+               <styleClass>
+                  <String fx:value="logout" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <!-- Titre et icônes -->
+      <HBox layoutX="330.3999938964844" layoutY="62.0" spacing="15">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/logo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/users.png" />
+               </image>
+            </ImageView>
+            <Text text="Gestion des utilisateurs">
+               <font>
+                  <Font name="Arial Bold" size="21.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+
+      <!-- Barre de recherche -->
+      <HBox layoutX="759.4000244140625" layoutY="66.0" spacing="10">
+         <children>
+            <TextField prefWidth="200.0" promptText="Rechercher un utilisateur..." />
+            <ImageView fitHeight="34.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+
+      <!-- Tableau des utilisateurs -->
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" layoutX="242.0" layoutY="132.0" prefHeight="584.0" prefWidth="810.0">
+         <content>
+            <GridPane fx:id="userGridPane" hgap="10" style="-fx-padding: 10px;" vgap="10">
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="80.19998168945312" minWidth="69.79998779296875" prefWidth="69.79998779296875" />
+                  <ColumnConstraints maxWidth="120.20001220703125" minWidth="43.20001831054688" prefWidth="43.20001831054688" />
+                  <ColumnConstraints maxWidth="194.1999816894531" minWidth="68.99996032714841" prefWidth="68.99996032714841" />
+                  <ColumnConstraints maxWidth="263.40003967285156" minWidth="104.0" prefWidth="104.0" />
+                  <ColumnConstraints maxWidth="238.39999999999998" minWidth="85.79998779296875" prefWidth="103.60001220703123" />
+                  <ColumnConstraints maxWidth="195.19998779296873" minWidth="66.0" prefWidth="84.79997558593743" />
+                  <ColumnConstraints maxWidth="175.19998779296873" minWidth="42.39998779296877" prefWidth="79.39998779296877" />
+                  <ColumnConstraints maxWidth="145.0000122070312" minWidth="13.5999755859375" prefWidth="79.79998779296875" />
+                  <ColumnConstraints maxWidth="161.199951171875" minWidth="13.5999755859375" prefWidth="75.80001220703127" />
+                  <ColumnConstraints maxWidth="78.4000244140625" minWidth="4.800048828125" prefWidth="70.40007324218755" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints prefHeight="40.0" />
+               </rowConstraints>
+               <children>
+                  <Label text="ID Utilisateur" GridPane.columnIndex="0" />
+                  <Label text="Nom" GridPane.columnIndex="1" />
+                  <Label text="Prénom" GridPane.columnIndex="2" />
+                  <Label text="Email" GridPane.columnIndex="3" />
+                  <Label text="Mot de passe" GridPane.columnIndex="4" />
+                  <Label text="Téléphone" GridPane.columnIndex="5" />
+                <Label text="Photo " GridPane.columnIndex="6" />
+                  <Label text="Rôle" GridPane.columnIndex="7" />
+
+                  <HBox spacing="10" GridPane.columnIndex="9" />
+                  <Label prefHeight="18.0" prefWidth="53.0" text="option" GridPane.columnIndex="8" />
+               </children>
+            </GridPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

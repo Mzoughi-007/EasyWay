@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: #A11010; /* Text color now as background */
+    -fx-text-fill: #f5f5dc; /* Background color now as text color */
+    -fx-font-family: "Calibri"; /* Font family */
+    -fx-font-size: 18px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding around the button */
+    -fx-background-radius: 10px; /* Rounded corners with smaller radius */
+    -fx-border-width: 0; /* No border */
+    -fx-transition: all 0.2s ease; /* Smooth transition for hover/pressed effect */
+}

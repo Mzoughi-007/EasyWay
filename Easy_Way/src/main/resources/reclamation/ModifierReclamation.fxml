@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.reclamation.ModifierReclamation">
+   <children>
+      <AnchorPane layoutX="-11.0" layoutY="-7.0" prefHeight="717.0" prefWidth="1097.0" style="-fx-background-color: #E96151;">
+         <children>
+            <Label layoutX="182.0" layoutY="44.0" prefHeight="72.0" prefWidth="764.0" text="Modifier les Reclamations des Clients :">
+               <font>
+                  <Font name="Cooper Black" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="174.0" layoutY="121.0" prefHeight="526.0" prefWidth="702.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="75.0" layoutY="66.0" prefHeight="31.0" prefWidth="106.0" text="Nouveau Sujet :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="129.0" prefHeight="31.0" prefWidth="168.0" text="Nouveau Description :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="276.0" prefHeight="38.0" prefWidth="142.0" text="Noveau Categorie :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="327.0" prefHeight="38.0" prefWidth="194.0" text="Nouveau Date d'incidence :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nouvSujet" layoutX="282.0" layoutY="72.0" prefHeight="26.0" prefWidth="258.0" promptText="saisir sujet...." />
+                  <DatePicker fx:id="nouvDate" layoutX="282.0" layoutY="337.0" prefHeight="26.0" prefWidth="256.0" promptText="      JJ / MM / AAAA" />
+                  <Button fx:id="modifierRec" layoutX="249.0" layoutY="466.0" mnemonicParsing="false" onAction="#modifierReclamation" prefHeight="31.0" prefWidth="202.0" style="-fx-background-color: #93d49a;" text="Modifier réclamation">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font></Button>
+                  <Button id="liste" fx:id="gogo" layoutX="476.0" layoutY="465.0" mnemonicParsing="false" onAction="#gotoCardView1" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #93d49a;" text="Aller au liste">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                     </font></Button>
+                  <ComboBox fx:id="nouvCategorie" layoutX="282.0" layoutY="287.0" prefHeight="26.0" prefWidth="257.0" promptText="Modifier categorie" />
+                  <Label fx:id="messageRecModifier" layoutX="153.0" layoutY="21.0" prefHeight="31.0" prefWidth="365.0" textFill="#3067ff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="nouvDescriptionn" layoutX="282.0" layoutY="122.0" prefHeight="140.0" prefWidth="258.0" promptText="Description...." />
+                  <Label layoutX="75.0" layoutY="383.0" prefHeight="31.0" prefWidth="143.0" text="Nouveau Statu :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="nouvStatu" layoutX="281.0" layoutY="385.0" prefHeight="26.0" prefWidth="257.0" promptText="Modifier statu" />
+                  <Button fx:id="stqButton1" layoutX="26.0" layoutY="466.0" mnemonicParsing="false" onAction="#gogotoStatestique" prefHeight="31.0" prefWidth="194.0" style="-fx-background-color: #93d49a;" text="Statestique">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="56.0" fitWidth="72.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

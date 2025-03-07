@@ -1,0 +1,103 @@
+.form-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-background-radius: 8;
+}
+
+.form-title {
+    -fx-text-fill: #2196F3;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 20 0;
+}
+
+.form-grid {
+    -fx-background-color: transparent;
+}
+
+.field-label {
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.form-field {
+    -fx-pref-width: 250px;
+    -fx-padding: 8 12;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-background-color: white;
+    -fx-font-size: 13px;
+}
+
+.form-field:focused {
+    -fx-border-color: #2196F3;
+    -fx-background-color: #F8F9FA;
+}
+
+.form-combo-box {
+    -fx-pref-width: 250px;
+    -fx-padding: 4;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-background-color: white;
+    -fx-font-size: 13px;
+}
+
+.form-combo-box:focused {
+    -fx-border-color: #2196F3;
+    -fx-background-color: #F8F9FA;
+}
+
+.form-checkbox {
+    -fx-text-fill: #424242;
+}
+
+.button-container {
+    -fx-padding: 20 0 0 0;
+}
+
+.primary-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-padding: 10 30;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.secondary-button {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: #424242;
+    -fx-padding: 10 30;
+    -fx-background-radius: 4;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 4;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #eeeeee;
+}
+
+/* Add hover effects for interactive elements */
+.form-field:hover, .form-combo-box:hover {
+    -fx-border-color: #BDBDBD;
+}
+
+/* Error state styling */
+.error {
+    -fx-border-color: #f44336;
+}
+
+/* Disable state styling */
+.form-field:disabled, .form-combo-box:disabled {
+    -fx-opacity: 0.6;
+}

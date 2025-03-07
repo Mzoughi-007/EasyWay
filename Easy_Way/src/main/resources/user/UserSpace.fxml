@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="620.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.user.UserInterfaceController">
+   <children>
+      <AnchorPane prefHeight="70.0" prefWidth="863.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Button fx:id="seconnecter" layoutX="757.0" layoutY="24.0" mnemonicParsing="false" onAction="#RedirectToSignIn" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: #000000;" text="Se connecter" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane layoutX="390.0" prefHeight="70.0" prefWidth="63.0">
+               <children>
+                  <ImageView fitHeight="64.0" fitWidth="139.0" layoutX="2.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Text layoutX="50.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bus">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="122.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Train">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="202.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="14.0" layoutY="66.0" prefHeight="7.0" prefWidth="124.0" style="-fx-background-color: #CD1818;" />
+            <Text fx:id="creercompte" layoutX="633.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Créer un compte " onMouseClicked="#RedirectToSignUp">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="4.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/bus.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="76.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/train.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="158.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/metro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="74.0" prefHeight="546.0" prefWidth="351.0">
+         <children>
+            <ImageView fitHeight="546.0" fitWidth="451.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/map.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text layoutX="375.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Planifiez vos déplacements facilement à travers la Tunisie" textAlignment="CENTER" underline="true" wrappingWidth="473.3044738769531">
+         <font>
+            <Font name="Arial Bold Italic" size="35.0" />
+         </font>
+      </Text>
+      <Button layoutX="534.0" layoutY="322.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" style="-fx-background-color: #000000;" text="Trouvez mon trajet " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

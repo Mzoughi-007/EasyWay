@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.reclamation.AjoutReclamation">
+    <children>
+        <AnchorPane prefHeight="700.0" prefWidth="1076.0" style="-fx-background-color: #E96151;">
+            <children>
+                <Label layoutX="323.0" layoutY="34.0" prefHeight="72.0" prefWidth="410.0" text="Reclamation Clients">
+                    <font>
+                        <Font name="Cooper Black" size="36.0" />
+                    </font>
+                </Label>
+            <AnchorPane layoutX="97.0" layoutY="121.0" prefHeight="525.0" prefWidth="867.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                    <Label layoutX="78.0" layoutY="59.0" prefHeight="31.0" prefWidth="106.0" text="Email :">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="78.0" layoutY="105.0" prefHeight="31.0" prefWidth="106.0" text="Sujet :">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="75.0" layoutY="156.0" prefHeight="31.0" prefWidth="106.0" text="Description :">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="79.0" layoutY="304.0" prefHeight="38.0" prefWidth="98.0" text="Categorie :">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="74.0" layoutY="358.0" prefHeight="38.0" prefWidth="118.0" text="Date d'incidence :">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="email" layoutX="236.0" layoutY="62.0" prefHeight="26.0" prefWidth="259.0" promptText="saisir votre mail..." styleClass="shadow" stylesheets="@css/grid.css" />
+                    <TextField fx:id="sujet" layoutX="237.0" layoutY="106.0" prefHeight="26.0" prefWidth="258.0" promptText="saisir sujet...." />
+                    <DatePicker fx:id="date" layoutX="239.0" layoutY="366.0" prefHeight="26.0" prefWidth="256.0" promptText="JJ/MM/AAAA" />
+                    <Button layoutX="120.0" layoutY="467.0" mnemonicParsing="false" onAction="#addReclamation" prefHeight="31.0" prefWidth="190.0" style="-fx-background-color: #93d49a;" text="Ajouter une réclamtion">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <Button id="liste" layoutX="367.0" layoutY="461.0" mnemonicParsing="false" onAction="#RedirectToOffers" prefHeight="31.0" prefWidth="189.0" style="-fx-background-color: #93d49a;" text="Retourner">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Button>
+                  <ImageView fitHeight="350.0" fitWidth="272.0" layoutX="556.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/rec.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="sujetcontrol" layoutX="523.0" layoutY="47.0" prefHeight="18.0" prefWidth="234.0" textFill="#d90a0a">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailcontrol" layoutX="518.0" layoutY="30.0" prefHeight="18.0" prefWidth="234.0" textFill="#d91616">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="datecontrol" layoutX="508.0" layoutY="48.0" prefHeight="18.0" prefWidth="242.0" textFill="#df0a0a">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                    <ComboBox fx:id="categorie" layoutX="238.0" layoutY="313.0" prefHeight="26.0" prefWidth="257.0" promptText="choisir une categorie" />
+                  <Label fx:id="messagerec" layoutX="205.0" layoutY="14.0" prefHeight="31.0" prefWidth="365.0" textFill="#3067ff">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="descriptionn" layoutX="237.0" layoutY="156.0" prefHeight="140.0" prefWidth="258.0" promptText="Description...." />
+                  <Label layoutX="73.0" layoutY="408.0" prefHeight="31.0" prefWidth="106.0" text="Statu :">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="statu" layoutX="237.0" layoutY="410.0" prefHeight="26.0" prefWidth="257.0" promptText="Statu..." />
+                  <Label fx:id="categoriecontrol" layoutX="66.0" layoutY="297.0" prefHeight="18.0" prefWidth="234.0" textFill="#dc1212">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="56.0" fitWidth="72.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+      <Label fx:id="descriptioncontrol" layoutX="222.0" layoutY="375.0" prefHeight="18.0" prefWidth="234.0" textFill="#d40e0e">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

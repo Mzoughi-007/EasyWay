@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="700.0" prefWidth="1080.0" stylesheets="@easyway.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.controller.vehicule.vehiculeController">
+    <!-- Left sidebar remains unchanged -->
+    <!-- Top header remains unchanged -->
+    <left>
+        <AnchorPane prefHeight="721.0" prefWidth="202.0" styleClass="nav-form" stylesheets="@dashboardDesign.css">
+            <children>
+                <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="30.0">
+                    <image>
+                        <Image url="@avatar.jpg" />
+                    </image>
+                </ImageView>
+
+                <Label layoutX="61.0" layoutY="223.0" text="Welcome," textFill="WHITE">
+                    <font>
+                        <Font name="Tahoma" size="17.0" />
+                    </font>
+                </Label>
+                <Label fx:id="username" alignment="CENTER" layoutX="1.0" layoutY="244.0" prefHeight="23.0" prefWidth="194.0" text="MarcoMan" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Line endX="69.0" layoutX="114.0" layoutY="208.0" startX="-100.0" stroke="WHITE" />
+                <VBox alignment="CENTER" layoutX="-3.0" layoutY="297.0" prefHeight="305.0" prefWidth="194.0" spacing="5.0">
+                    <children>
+                        <Button fx:id="usersBtn" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#RedirectToUsers" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Utilisateurs" />
+                        <Button fx:id="vehiculesBtn" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Vehicules">
+
+                        </Button>
+                        <Button fx:id="EventsBtn" mnemonicParsing="false" onAction="#RedirectToEvent" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Evenements">
+
+                        </Button>
+                        <Button fx:id="ReclamationBtn" mnemonicParsing="false" onAction="#RedirectToReclamation" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Reclamations">
+
+                        </Button>
+                        <Button fx:id="trajetBtn" mnemonicParsing="false" onAction="#RedirectToTrajet" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Trajets" />
+                        <Button fx:id="ligneBtn" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#RedirectToLigne" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="Lignes" />
+                    </children>
+                </VBox>
+                <Button fx:id="logout" layoutX="41.0" layoutY="635.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="113.0" stylesheets="@dashboardDesign.css" text="Logout" textFill="WHITE">
+
+                    <styleClass>
+                        <String fx:value="logout" />
+                        <String fx:value="shadow" />
+                    </styleClass>
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+      <AnchorPane prefHeight="700.0" prefWidth="979.0">
+         <children>
+              <TabPane fx:id="tabPane" layoutX="-1.0" prefHeight="731.0" prefWidth="999.0">
+                  <!-- Bus Tab -->
+                  <Tab fx:id="busTab" closable="false" text="Bus">
+                      <VBox alignment="CENTER" spacing="20" styleClass="content-area">
+                          <Label styleClass="title-label" text="Gestion des Véhicules (Bus)">
+                              <font>
+                                  <Font size="28" />
+                              </font>
+                          </Label>
+                          <TextField fx:id="searchField" promptText="Rechercher par conducteur, trajet, propriétaire..." />
+      
+                          <!-- Filtres -->
+                          <HBox spacing="10">
+                              <ComboBox fx:id="conductorFilter" promptText="Conducteur" />
+                              <ComboBox fx:id="tripFilter" promptText="Trajet (départ ou arrêt)" />
+                              <ComboBox fx:id="serviceFilter" promptText="Service" />
+                              <ComboBox fx:id="stateFilter" promptText="État" />
+                          </HBox>
+      
+      
+      
+      
+                          <!-- Conteneur pour les cartes -->
+                          <VBox fx:id="cardContainer" spacing="10" />
+                          <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                              <FlowPane fx:id="busCardsContainer" hgap="20" styleClass="cards-container" vgap="20">
+                                  <!-- Bus Card Template -->
+                                  <VBox styleClass="vehicle-card">
+                                      <HBox styleClass="card-header">
+                                          <Label styleClass="card-title" text="Bus" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="etatLabel" styleClass="status-badge" text="En Service" />
+                                      </HBox>
+      
+                                      <VBox styleClass="card-content">
+                                          <GridPane hgap="15" vgap="10">
+                                              <columnConstraints>
+                                                  <ColumnConstraints maxWidth="128.0" minWidth="37.5999755859375" prefWidth="74.4000244140625" />
+                                                  <ColumnConstraints hgrow="ALWAYS" maxWidth="90.4000244140625" minWidth="0.0" prefWidth="53.5999755859375" />
+                                              </columnConstraints>
+      
+                                              <Label styleClass="field-label" text="Immatricule:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                              <Label fx:id="immaLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+                                              <Label styleClass="field-label" text="Capacité:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                              <Label fx:id="capLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+                                              <Label styleClass="field-label" text="Conducteur:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                  <Label fx:id="conducteurNomLabel" styleClass="field-value" />
+                                                  <Label fx:id="conducteurPrenomLabel" styleClass="field-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Trajet:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                  <Label fx:id="departLabel" styleClass="route-value" />
+                                                  <Label fx:id="arretLabel" styleClass="route-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Spécifications:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                  <Label fx:id="nombrePorteLabel" styleClass="spec-value" />
+                                                  <Label fx:id="TypeServiceLabel" styleClass="spec-value" />
+                                                  <Label fx:id="PlacesLabel" styleClass="spec-value" />
+                                                  <Label fx:id="compagnieLabel" styleClass="spec-value" />
+                                                  <Label fx:id="climatisationLabel" styleClass="spec-value" />
+                                              </VBox>
+                                    <rowConstraints>
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints maxHeight="47.2" minHeight="32.80000610351563" prefHeight="33.59999389648438" />
+                                       <RowConstraints maxHeight="37.59999389648439" minHeight="23.200000000000017" prefHeight="36.80000610351564" />
+                                       <RowConstraints />
+                                    </rowConstraints>
+                                          </GridPane>
+                                      </VBox>
+      
+                                      <HBox styleClass="card-actions">
+                                          <Button styleClass="edit-button" text="Modifier">
+                                              <graphic>
+                                                  <Region styleClass="edit-icon" />
+                                              </graphic>
+                                          </Button>
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Button onAction="#handleDeleteBus" prefHeight="26.0" prefWidth="78.0" styleClass="delete-button" text="Supprimer">
+                                              <graphic>
+                                                  <Region styleClass="delete-icon" />
+                                              </graphic>
+                                          </Button>
+      
+                                      </HBox>
+                                  </VBox>
+                              </FlowPane>
+                          </ScrollPane>
+                          <Button onAction="#handleAddBus" styleClass="add-button">
+                              <graphic>
+                                  <Label styleClass="icon-label" text="+" />
+                              </graphic>
+                              <text>Ajouter</text>
+                          </Button>
+                      </VBox>
+                  </Tab>
+      
+                  <!-- Metro Tab -->
+                  <Tab fx:id="metroTab" closable="false" text="Metro">
+                      <VBox alignment="CENTER" spacing="20" styleClass="content-area">
+                          <Label styleClass="title-label" text="Gestion des Véhicules (Metro)">
+                              <font>
+                                  <Font size="28" />
+                              </font>
+                          </Label>
+      
+                          <TextField fx:id="searchField1" promptText="Rechercher par conducteur, trajet, propriétaire..." />
+      
+                          <!-- Filtres -->
+                          <HBox spacing="10">
+                              <ComboBox fx:id="conductorFilter1" promptText="Conducteur" />
+                              <ComboBox fx:id="tripFilter1" promptText="Trajet (départ ou arrêt)" />
+                              <ComboBox fx:id="stateFilter1" promptText="État" />
+                              <ComboBox fx:id="propertyFilter" promptText="Propriétaires" />
+                          </HBox>
+                          <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                              <FlowPane fx:id="metroCardsContainer" hgap="20" styleClass="cards-container" vgap="20">
+                                  <!-- Metro Card Template -->
+                                  <VBox styleClass="vehicle-card">
+                                      <HBox styleClass="card-header">
+                                          <Label styleClass="card-title" text="Metro" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="metroEtatLabel" styleClass="status-badge" text="En Service" />
+                                      </HBox>
+      
+                                      <VBox styleClass="card-content">
+                                          <GridPane hgap="15" vgap="10">
+                                              <columnConstraints>
+                                                  <ColumnConstraints minWidth="120" />
+                                                  <ColumnConstraints hgrow="ALWAYS" />
+                                              </columnConstraints>
+      
+                                              <Label styleClass="field-label" text="Immatricule:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                              <Label fx:id="metroImmaLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+                                              <Label styleClass="field-label" text="Capacité:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                              <Label fx:id="metroCapLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+                                              <Label styleClass="field-label" text="Conducteur:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                  <Label fx:id="metroConducteurNomLabel" styleClass="field-value" />
+                                                  <Label fx:id="metroConducteurPrenomLabel" styleClass="field-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Trajet:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                  <Label fx:id="metroDepartLabel" styleClass="route-value" />
+                                                  <Label fx:id="metroArretLabel" styleClass="route-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Spécifications:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                  <Label fx:id="metroLigneLabel" styleClass="spec-value" />
+                                                  <Label fx:id="metroVitesseLabel" styleClass="spec-value" />
+                                                  <Label fx:id="metroWagonsLabel" styleClass="spec-value" />
+                                              </VBox>
+                                    <rowConstraints>
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                    </rowConstraints>
+                                          </GridPane>
+                                      </VBox>
+      
+                                      <HBox styleClass="card-actions">
+                                          <Button styleClass="edit-button" text="Modifier">
+                                              <graphic>
+                                                  <Region styleClass="edit-icon" />
+                                              </graphic>
+                                          </Button>
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Button styleClass="delete-button" text="Supprimer">
+                                              <graphic>
+                                                  <Region styleClass="delete-icon" />
+                                              </graphic>
+                                          </Button>
+                                      </HBox>
+                                  </VBox>
+                              </FlowPane>
+                          </ScrollPane>
+                          <Button onAction="#handleAddMetro" styleClass="add-button">
+                              <graphic>
+                                  <Label styleClass="icon-label" text="+" />
+                              </graphic>
+                              <text>Ajouter</text>
+                          </Button>
+                      </VBox>
+                  </Tab>
+      
+                  <!-- Train Tab -->
+                  <Tab fx:id="trainTab" closable="false" text="Train">
+                      <VBox alignment="CENTER" prefHeight="590.0" prefWidth="869.0" spacing="20" styleClass="content-area">
+                          <Label styleClass="title-label" text="Gestion des Véhicules (Train)">
+                              <font>
+                                  <Font size="28" />
+                              </font>
+                          </Label>
+                          <TextField fx:id="searchField2" prefHeight="33.0" prefWidth="565.0" promptText="Rechercher par conducteur, trajet, propriétaire..." />
+      
+                          <!-- Filtres -->
+                          <HBox spacing="10">
+                          <ComboBox fx:id="conductorFilter2" promptText="Conducteur" />
+                          <ComboBox fx:id="tripFilter2" promptText="Trajet (départ ou arrêt)" />
+                          <ComboBox fx:id="stateFilter2" promptText="État" />
+                          <ComboBox fx:id="propertyFilter2" promptText="Propriétaires" />
+                         </HBox>
+                          <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                              <FlowPane fx:id="trainCardsContainer" hgap="20" styleClass="cards-container" vgap="20">
+                                  <!-- Train Card Template -->
+                                  <VBox styleClass="vehicle-card">
+                                      <HBox styleClass="card-header">
+                                          <Label styleClass="card-title" text="Train" />
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Label fx:id="trainEtatLabel" styleClass="status-badge" text="En Service" />
+                                      </HBox>
+      
+                                      <VBox styleClass="card-content">
+                                          <GridPane hgap="15" vgap="10">
+                                              <columnConstraints>
+                                                  <ColumnConstraints minWidth="120" />
+                                                  <ColumnConstraints hgrow="ALWAYS" />
+                                              </columnConstraints>
+      
+                                              <Label styleClass="field-label" text="Immatricule:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                              <Label fx:id="trainImmaLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      
+                                              <Label styleClass="field-label" text="Capacité:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                              <Label fx:id="trainCapLabel" styleClass="field-value" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      
+                                              <Label styleClass="field-label" text="Conducteur:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                  <Label fx:id="trainConducteurNomLabel" styleClass="field-value" />
+                                                  <Label fx:id="trainConducteurPrenomLabel" styleClass="field-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Trajet:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                  <Label fx:id="trainDepartLabel" styleClass="route-value" />
+                                                  <Label fx:id="trainArretLabel" styleClass="route-value" />
+                                              </VBox>
+      
+                                              <Label styleClass="field-label" text="Spécifications:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                              <VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                  <Label fx:id="trainTypeLabel" styleClass="spec-value" />
+                                                  <Label fx:id="trainVitesseLabel" styleClass="spec-value" />
+                                                  <Label fx:id="trainWagonsLabel" styleClass="spec-value" />
+                                                  <Label fx:id="trainClasseLabel" styleClass="spec-value" />
+                                              </VBox>
+                                    <rowConstraints>
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                       <RowConstraints />
+                                    </rowConstraints>
+                                          </GridPane>
+                                      </VBox>
+      
+                                      <HBox styleClass="card-actions">
+                                          <Button styleClass="edit-button" text="Modifier">
+                                              <graphic>
+                                                  <Region styleClass="edit-icon" />
+                                              </graphic>
+                                          </Button>
+                                          <Region HBox.hgrow="ALWAYS" />
+                                          <Button styleClass="delete-button" text="Supprimer">
+                                              <graphic>
+                                                  <Region styleClass="delete-icon" />
+                                              </graphic>
+                                          </Button>
+                                      </HBox>
+                                  </VBox>
+                              </FlowPane>
+                          </ScrollPane>
+                          <Button onAction="#handleAddTrain" styleClass="add-button">
+                              <graphic>
+                                  <Label styleClass="icon-label" text="+" />
+                              </graphic>
+                              <text>Ajouter</text>
+                          </Button>
+                      </VBox>
+                  </Tab>
+              </TabPane>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
+    </center>
+</BorderPane>

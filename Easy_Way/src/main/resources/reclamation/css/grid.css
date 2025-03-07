@@ -1,0 +1,145 @@
+
+.Text {
+    -fx-font-size: 36px;
+    -fx-font-family: "Book Antiqua";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Boutons */
+#btnChercher, #trier, #pdfButton, #refreshBtn {
+    -fx-background-color: #3498db; /* Bleu clair pour les boutons */
+    -fx-text-fill: white; /* Texte en blanc */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-font-family: "System Bold";
+    -fx-pref-width: 100px;
+    -fx-pref-height: 35px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+#btnChercher:hover, #trier:hover, #pdfButton:hover, #refreshBtn:hover {
+    -fx-background-color: #2980b9; /* Bleu foncé au survol */
+}
+
+/* Style des champs de texte (TextField) */
+.TextField {
+    -fx-background-color: white; /* Fond blanc pour les champs */
+    -fx-border-color: #3498db; /* Bordure bleue pour les champs */
+    -fx-border-radius: 8px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-font-family: "System";
+    -fx-pref-width: 200px;
+}
+
+/* Style des ComboBox */
+.ComboBox {
+    -fx-background-color: white;
+    -fx-border-color: #3498db; /* Bordure bleue */
+    -fx-border-radius: 8px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-font-family: "System";
+    -fx-pref-width: 200px;
+}
+
+/* Style des labels de message */
+#lblMessage, #lblMessage1 {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a731a; /* Vert pour les messages */
+    -fx-font-family: "System";
+}
+
+/* Table des réclamations */
+#gridPaneReclamations {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-insets: 0;
+}
+
+/* Colonnes du GridPane */
+.columnConstraints {
+    -fx-hgrow: ALWAYS;
+    -fx-min-width: 100;
+}
+
+/* Boutons Modifier et Supprimer dans le VBox */
+.VBox Button {
+    -fx-background-color: #3498db; /* Bleu pour le bouton "Modifier" */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 35px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.VBox Button:hover {
+    -fx-background-color: #2980b9; /* Bleu foncé au survol */
+}
+
+/* Bouton "Return" */
+#btnChercher {
+    -fx-background-color: #3498db; /* Bleu clair */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 35px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+#btnChercher:hover {
+    -fx-background-color: #2980b9; /* Bleu foncé au survol */
+}
+
+/* Padding et marges pour les éléments de texte */
+.Text {
+    -fx-padding: 5px;
+    -fx-margin-top: 20px;
+}
+
+/* Style du ScrollPane */
+.ScrollPane {
+    -fx-background-color: transparent;
+}
+
+.chart-pie-label {
+    -fx-fill: black; /* Couleur du texte */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Couleur des tranches du PieChart */
+.default-color0.chart-pie { -fx-pie-color: #09bd17; } /* "Traitée" -> Vert */
+.default-color1.chart-pie { -fx-pie-color: #ff7a03; } /* "En attente" -> Jaune */
+.default-color2.chart-pie { -fx-pie-color: #fe1010; } /* "Refusée" -> Rouge */
+
+
+.dialog-pane {
+    -fx-background-color: #f0f8ff;  /* Couleur de fond */
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+.dialog-pane .header {
+    -fx-background-color: #87cefa; /* Couleur d'en-tête */
+    -fx-text-fill: #fff; /* Couleur du texte dans l'en-tête */
+}
+
+.dialog-pane .content {
+    -fx-text-fill: #333;  /* Couleur du texte du contenu */
+}
+
+.button {
+    -fx-background-color: #4682b4;  /* Couleur de fond des boutons */
+    -fx-text-fill: #fff; /* Couleur du texte du bouton */
+}
+
+
